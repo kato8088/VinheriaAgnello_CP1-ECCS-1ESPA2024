@@ -3,13 +3,13 @@
 > [!CAUTION]
 > **PUBLICAR O REPOSITORIO QUANDO FOR ENVIAR O TRABALHO**
 
-
-> [!IMPORTANT]
-> Outra questão importante, na apresentação fala que eh pra apitar o buzzer quando estiver em nivel de alerta (amarelo), será que mantém no vermelho?
-> 
-> Em relação ao projeto eletrônico, só falta testar e ajustar os parâmetros do LDR em um ambiente real.
->
-> (e tirar as linhas (e peças) de debug do código, e quanto a isso da pra fazer uma versão release e uma debug do projeto)
+## Mestre: 
+- Professor Fábio Cabrini
+## Alunos:
+- [**Gabriel Kato**](https://github.com/kato8088) - RM560000
+- [**Francisco Vargas**](https://github.com/Franciscov25) - RM560322
+- [**Gabriel Couto**](https://github.com/rouri404) - RM559579
+- [**João Vitor**](https://github.com/joaomatosq) - RM559246
 
 ## Entrega do Projeto (cópia dos slides):
 <details open>
@@ -38,11 +38,9 @@
 
 ## O que falta fazer:
 - [ ] Documentação (provavelmente só no README.md mesmo "Arquivo README contendo a descrição do projeto, suas dependências e como reproduzi-lo")
-- [ ] Colocar nossos nomes no projeto do GitHub
-- [ ] Limpeza de código (no final)
-- [ ] Video do YT
-- [ ] Comentar o código (exigência no ppt)
-- [ ] talvez alguma coisa que eu esqueci de colocar kkk
+- [ ] Video do YouTube
+- [x] Comentar o código
+- [x] Colocar nossos nomes no projeto do GitHub
 - [x] Código
 - [x] Projeto eletrônico
 
@@ -52,8 +50,4 @@
 - **LED Amarelo:** Digital 3
 - **LED Verde:** Digital 4
 - **Buzzer:** Digital 5
-- **LDR:** Analógico 5 (A5) <br> (muita atenção no schematic em relação a fiação do LDR)
-- **Pino de Debug** _(não utilizado no projeto finalizado)_: Digital 13
-
-
-problem? :trollface:
+- **LDR:** Analógico 5 (A5)

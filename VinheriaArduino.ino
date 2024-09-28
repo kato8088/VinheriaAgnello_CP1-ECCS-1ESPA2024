@@ -1,35 +1,30 @@
-/*
-2do:
-- ajustar os valores do ldr na prática, no simulador está instável
-- ajustar o delay dos buzzers
-- fazer sons diferentes para atencao e alerta
-- colocar lcd
-*/
+// Associando pinos físicos as suas funções correspondentes
+#define pinoLDR A5
+#define ledVermelho 6
+#define ledAmarelo 7
+#define ledVerde 8
+#define buzzer 9
 
-#define LDR_PIN A5
-#define ledVermelho 2
-#define ledAmarelo 3
-#define ledVerde 4
-#define debugLed 13
-#define buzzer 5
 
-int intensidadeLDR;
+int intensidadeLDR; // Declarando a variável global do nível de luminosidade detectado pelo LDR
 
 
 void setup(){
+  // Setando a baud rate da comunicação serial e o tipo do I/O dos pinos
   Serial.begin(9600);
-  pinMode(debugLed, OUTPUT);
   pinMode(ledVermelho, OUTPUT);
   pinMode(ledAmarelo, OUTPUT);
   pinMode(ledVerde, OUTPUT);
-  pinMode(LDR_PIN, INPUT);
+  pinMode(pinoLDR, INPUT);
   pinMode(buzzer, OUTPUT);
 }
 
 int luxTick(){
-  intensidadeLDR = map(analogRead(LDR_PIN), 40, 999, 0, 100);
+  // Função de checagem da luminosidade e I/O dos LEDs, LDR e buzzer
+  intensidadeLDR = map(analogRead(pinoLDR), 45, 990, 0, 100); // função map() usada para criar uma range calibrada para o LDR de 0 a 100
 
-  if (intensidadeLDR > 50) {
+  // Condições da checagem da luminosidade e subsequentes ações
+  if (intensidadeLDR > 67) {
     Serial.println(" Luminosidade: Alerta!");
     digitalWrite(ledVermelho, HIGH);
     digitalWrite(ledAmarelo, LOW);
@@ -39,17 +34,17 @@ int luxTick(){
     //fine tune in real hardware l8r
     digitalWrite(buzzer, LOW);
   }
-  if (41 < intensidadeLDR and intensidadeLDR < 50) {
+  if (34 < intensidadeLDR and intensidadeLDR < 66) {
     Serial.println(" Luminosidade: Atencao!");
     digitalWrite(ledVermelho, LOW);
     digitalWrite(ledAmarelo, HIGH);
     digitalWrite(ledVerde, LOW);
     digitalWrite(buzzer, HIGH);
-    delay(500);
+    delay(250);
     digitalWrite(buzzer, LOW);
     //fine tune in real hardware l8r
   }
-  if (intensidadeLDR < 40) {
+  if (intensidadeLDR < 33) {
     Serial.println(" Luminosidade: normal");
     digitalWrite(ledVermelho, LOW);
     digitalWrite(ledAmarelo, LOW);
@@ -58,12 +53,14 @@ int luxTick(){
 }
 
 void loop(){
-  
+  // Função de loop principal do sistema para rodar indefinidamente
   luxTick();
 
+  // Código para informar a intensidade da luz via Serial
   Serial.print("Intensidade da Luz: ");
   Serial.println(intensidadeLDR);
   
-  delay(1000);
-  // fine tune in real hardware l8r
+  // Delay geral para não sobrecarregar o Arduino 
+  delay(500);
+  			// fine tune in real hardware l8r
 }
