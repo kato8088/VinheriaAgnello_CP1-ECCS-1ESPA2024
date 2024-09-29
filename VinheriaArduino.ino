@@ -30,9 +30,9 @@ int luxTick(){
     digitalWrite(ledAmarelo, LOW);
     digitalWrite(ledVerde, LOW);
     digitalWrite(buzzer, HIGH);
-    delay(1000);
-    //fine tune in real hardware l8r
+    delay(3000);
     digitalWrite(buzzer, LOW);
+    delay(2000); // Complemento do timer de 3 segundos para a disparada do buzzer
   }
   if (34 < intensidadeLDR and intensidadeLDR < 66) {
     Serial.println(" Luminosidade: Atencao!");
@@ -40,9 +40,9 @@ int luxTick(){
     digitalWrite(ledAmarelo, HIGH);
     digitalWrite(ledVerde, LOW);
     digitalWrite(buzzer, HIGH);
-    delay(250);
+    delay(1500);
     digitalWrite(buzzer, LOW);
-    //fine tune in real hardware l8r
+    delay(2000); // Complemento do timer de 3 segundos para a disparada do buzzer
   }
   if (intensidadeLDR < 33) {
     Serial.println(" Luminosidade: normal");
@@ -60,7 +60,6 @@ void loop(){
   Serial.print("Intensidade da Luz: ");
   Serial.println(intensidadeLDR);
   
-  // Delay geral para não sobrecarregar o Arduino 
-  delay(500);
-  			// fine tune in real hardware l8r
+  // Delay geral complementar ao buzzer e para não sobrecarregar o Arduino
+  delay(1000);
 }
