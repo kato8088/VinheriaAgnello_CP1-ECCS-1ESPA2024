@@ -2,7 +2,7 @@
 
 > [!CAUTION]
 > **PUBLICAR O REPOSITORIO QUANDO FOR ENVIAR O TRABALHO**
-> E ATUALIZAR A PINAGEM, INCLUIR A TELA  NA DOCUMENTACAO
+
 
 ## Mestre: 
 - Professor Fábio Cabrini
@@ -13,14 +13,15 @@
 - [**João Vitor**](https://github.com/joaomatosq) - RM559246
 
 ## Descrição do Projeto:
-Essa é a primeira parte do projeto de Data Logger do primeiro semestre de Edge Computing. O sistema até o momento consiste em um fotoresistor, três LEDs, um Buzzer e um microcontrolador Atmel ATMega 328P sob uma placa Arduino Uno R3.
+Essa é a primeira parte do projeto de Data Logger do primeiro semestre de Edge Computing. O sistema até o momento consiste em um fotoresistor, três LEDs, um Buzzer, uma tela LCD 16x2 e um microcontrolador Atmel ATMega 328P sob uma placa Arduino Nano.
 
 ## Componentes Utilizados:
-- **Arduino Uno R3**
+- **Arduino Nano**
+- **Tela LCD 16x2**
 - **Sensor LDR**
 - **LEDs**: Vermelho, Amarelo e Verde
 - **Buzzer**
-- **Resistores**: 1k e 10k
+- **Resistores**: 220Ω, 1kΩ, 1.2kΩ e 10kΩ
 - **Jumpers**
 - **Protoboard**
 
@@ -30,14 +31,15 @@ Essa é a primeira parte do projeto de Data Logger do primeiro semestre de Edge 
 - **LED Verde:** Digital 4 (D4)
 - **Buzzer:** Digital 5 (D5)
 - **LDR:** Analógico 5 (A5)
+- **Pinos usados pelo LCD:** DB7 (D2), DB6 (D3), DB5 (D4), DB4 (D5), E (D11), RS (D12)
 
 ## Funcionamento:
-O código verifica a medição da entrada analógica *A5* pela função *luxTick()* e dependendo da voltagem lida pelo Arduino, define a situação do ambiente da Vinheria como:
-1. **Normal** (Nível 0 a 33): O ambiente está adequadamente iluminado, portanto somente o LED Verde é aceso.
-2. **Atenção** (Nível 34 a 66): O ambiente está em um nível de iluminação inadequado, entre o normal e o crítico, portanto, o LED Amarelo é ligado e o buzzer apita brevemente (1.5 segundos).
-3. **Alerta** (Nível 67 a 100): O ambiente está em uma condição inadequada para o armazenamento de vinhos, comprometendo sua qualidade, portanto, o LED Vermelho se acende e o buzzer apita longamente (3 segundos).
+O código inicia com uma animação de *boot* do nosso grupo e então inicia o funcionamento do código principal. A função *luxTick()* verifica a medição da entrada analógica *A5* e dependendo da voltagem lida pelo Arduino, define a situação do ambiente da Vinheria como:
+1. **Normal** (Nível 0 a 20): O ambiente está adequadamente iluminado, portanto somente o LED Verde é aceso.
+2. **Atenção** (Nível 21 a 50): O ambiente está em um nível de iluminação inadequado, entre o normal e o crítico, portanto, o LED Amarelo é ligado e o buzzer apita brevemente 4 vezes.
+3. **Alerta** (Nível 51 a 100): O ambiente está em uma condição inadequada para o armazenamento de vinhos, comprometendo sua qualidade, portanto, o LED Vermelho se acende e o buzzer apita repetidamente por 9 vezes (3 segundos no total).
 
-As rotinas foram programadas para rodar uma vez por segundo e para o buzzer apitar uma vez a cada três segundos, independentemente da sua duração.
+As rotina principal (*void loop*) foi programada para rodar após a rotina de medição (*luxTick*) e um *delay* de 400ms.
 
 A situação do ambiente e o nível da intensidade da luz são enviadas pela porta Serial do Arduino em uma Baud Rate de 9.6kbps.
 

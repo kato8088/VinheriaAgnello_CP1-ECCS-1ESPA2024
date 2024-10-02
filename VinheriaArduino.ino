@@ -93,43 +93,43 @@ void loop(){
 
 void splashScreen(){
   image00();//Primeiro frame
-  delay(250);
+  delay(300);
   image01();//Segundo frame
-  delay(250);
+  delay(300);
   image02();//Terceiro frame
-  delay(250);
+  delay(300);
   image03();//Quarto frame
-  delay(250);
+  delay(300);
   image04();//Quinto frame
-  delay(250);
+  delay(300);
   image05();//Sexto frame
-  delay(250);
+  delay(300);
   image06();//Sétimo frame
-  delay(250);
+  delay(300);
   image07();//Oitavo frame
-  delay(250);
+  delay(300);
   image08();//Nono frame
-  delay(250);
+  delay(300);
   image09();//Décimo frame
-  delay(250);
+  delay(300);
   image10();//Décimo primeiro frame
-  delay(250);
+  delay(300);
   image11();//Décimo segundo frame
-  delay(250);
+  delay(300);
   image12();//Décimo terceiro frame
-  delay(250);
+  delay(300);
   image13();//Décimo quarto frame
-  delay(250);
+  delay(300);
   image14();//Décimo quinto frame
-  delay(250);
+  delay(300);
   image15();//Décimo sexto frame
-  delay(250);
+  delay(300);
   image16();//Décimo sétimo frame
-  delay(250);
+  delay(300);
   image17();//Décimo oitavo frame
-  delay(250);
+  delay(300);
   image18();//Décimo nono frame
-  delay(250);
+  delay(300);
   image19();//Vigésimo frame
  	image20(); //Moskitto
 }
