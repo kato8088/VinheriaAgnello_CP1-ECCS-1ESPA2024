@@ -47,7 +47,7 @@ A situação do ambiente e o nível da intensidade da luz são enviadas pela por
 1. Conecte os fios e componentes conforme o esquema elétrico providenciado com a placa desconectada.
 2. Conecte a placa ao PC.
 3. Usando uma IDE compatível com a linguagem C++ e as bibliotecas do Arduino (como o Arduino IDE), cole o código-fonte do projeto no IDE, compile e faça o *upload* para a placa.
-4. A instalação está completa! Caso queira monitorar os valores, use um monitor Serial como o PuTTY ou o monitor embutido no Arduino IDE, não se esqueça de configurar a Baud Rate corretamente (9600 baud)!
+4. A instalação está completa! Caso queira monitorar os valores, use um monitor Serial como o PuTTY ou o monitor embutido no Arduino IDE, não se esqueça de configurar a Baud Rate corretamente (9600 baud).
 
 ## Entrega do Projeto (cópia dos slides):
 <details open>
