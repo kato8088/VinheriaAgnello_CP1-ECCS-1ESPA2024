@@ -1,12 +1,8 @@
-# Caso da Vinheria Agnello - Data Logger - Checkpoint 1 - 1ESPA - 09-10/2024
-
-> [!CAUTION]
-> **PUBLICAR O REPOSITORIO QUANDO FOR ENVIAR O TRABALHO**
-
+# Caso da Vinheria Agnello - Data Logger - Checkpoint 1 - 1ESPA - Primeiro Semestre de 2024
 
 ## Mestre: 
 - Professor Fábio Cabrini
-## Alunos:
+## Membros do Grupo - **Moskitto**:
 - [**Gabriel Kato**](https://github.com/kato8088) - RM560000
 - [**Francisco Vargas**](https://github.com/Franciscov25) - RM560322
 - [**Gabriel Couto**](https://github.com/rouri404) - RM559579
@@ -16,7 +12,7 @@
 Essa é a primeira parte do projeto de Data Logger do primeiro semestre de Edge Computing. O sistema até o momento consiste em um fotoresistor, três LEDs, um Buzzer, uma tela LCD 16x2 e um microcontrolador Atmel ATMega 328P sob uma placa Arduino Nano.
 
 ## Componentes Utilizados:
-- **Arduino Nano**
+- **Arduino Uno R3** ou **Arduino Nano**
 - **Tela LCD 16x2**
 - **Sensor LDR**
 - **LEDs**: Vermelho, Amarelo e Verde
@@ -43,41 +39,12 @@ As rotina principal (*void loop*) foi programada para rodar após a rotina de me
 
 A situação do ambiente e o nível da intensidade da luz são enviadas pela porta Serial do Arduino em uma Baud Rate de 9.6kbps.
 
+## Montagem
+Faça a montagem seguindo o esquema eletrônico disponibilizado em PDF ou pela imagem abaixo:
+![Alt text](./ProjetoVinheria_release.png "Montagem Eletrônica")
+
 ## Como instalar e rodar o projeto?
 1. Conecte os fios e componentes conforme o esquema elétrico providenciado com a placa desconectada.
 2. Conecte a placa ao PC.
 3. Usando uma IDE compatível com a linguagem C++ e as bibliotecas do Arduino (como o Arduino IDE), cole o código-fonte do projeto no IDE, compile e faça o *upload* para a placa.
 4. A instalação está completa! Caso queira monitorar os valores, use um monitor Serial como o PuTTY ou o monitor embutido no Arduino IDE, não se esqueça de configurar a Baud Rate corretamente (9600 baud).
-
-## Entrega do Projeto (cópia dos slides):
-<details open>
-  <summary>Entregas do Projeto (GitHub)</summary>
-  - Projeto e simulação no Tinkercad <br>
-  - Código comentado <br>
-  - Arquivo README contendo a descrição do projeto, suas dependências e como reproduzi-lo <br>
-  - Link público do vídeo de no máximo 3 minutos explicando como o projeto foi  implementado, quais foram as dificuldades encontradas e como foram resolvidas <br>
-</details>
-<details open>
-  <summary>Avaliação</summary>
-  - Serão um total de 10 Pontos:<br>
-  - Simulação – 5 pontos:<br>
-  - Projeto no Tinkercad;<br>
-  - Código fonte comentado;<br>
-  - 2 pontos pela clareza do video explicativo (Simulação);<br>
-  - 1 ponto pela clareza do README;<br>
-  - Hands-ON – 5 pontos: <br>
-  - 5 pontos pela demonstração do projeto funcionando e pela explicação da implementação; <br>
-</details>
-<details open>
-  <summary>E como faremos isso?</summary>
-  - Entrega via formulário:  https://forms.office.com/r/AJPCEuwzQf <br>
-  - Data do Hands-ON: 1ESPA - 07/10/2024 <br>
-</details>
-
-## O que falta fazer:
-- [ ] Video do YouTube
-- [x] Documentação (provavelmente só no README.md mesmo "Arquivo README contendo a descrição do projeto, suas dependências e como reproduzi-lo")
-- [x] Comentar o código
-- [x] Colocar nossos nomes no projeto do GitHub
-- [x] Código
-- [x] Projeto eletrônico
